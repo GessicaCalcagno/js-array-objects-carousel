@@ -26,59 +26,58 @@ const images = [
   },
 ];
 
+//Contenitore delle img grandi
 let imgContainer = document.querySelector(".my-carousel-images");
 console.log(imgContainer);
 
+//MILESTON 2
+//Prendo il contenitore delle miniature
+let miniContainer = document.querySelector(".my-thumbnails");
+console.log(miniContainer);
+
 // MILESTON 1
-images.forEach((curImage) => {
-  console.log(curImage);
+images.forEach((curElem, index) => {
+  console.log(curElem, index);
 
   imgContainer.innerHTML += `
   <div class="my-carousel-item" carousel-item="1">
-      <img class="img-fluid" src="${curImage.image}" alt="Marvel photo"/>
+      <img class="img-fluid" src="${curElem.image}" alt="Marvel photo"/>
       <div class="item-description px-3">
-          <h2>${curImage.title}</h2>
-          <p> ${curImage.text}</p>
+          <h2>${curElem.title}</h2>
+          <p> ${curElem.text}</p>
       </div>
   </div>
   `;
+  //MILESTON 2
+  miniContainer.innerHTML += `
+  <img class="img-fluid my-thumbnail" src="${curElem.image}" alt="Thumbnail of Marvel's"/>
+  `;
 });
 
-// Mi aggancio al div delle immagini
+// Mi aggancio al div delle immagini grandi
 const slides = document.querySelectorAll(".my-carousel-item");
 console.log(slides);
 
+//MILESTON 2
+// Mi aggancio al div delle immagini piccole
+const thumbs = document.querySelectorAll(".my-thumbnail");
+console.log(thumbs);
+
 //Indico che la prima immagine deve rimanere attiva prima che scorra
 let activeIndex = 0;
+
 slides[activeIndex].classList.add("active");
-
-//FUNZIONAAAAAA
-//Al click sulla freccia avanti
-// const nextBtn = document
-//   .querySelector(".my-next-hook")
-//   .addEventListener("click", () => {
-//     //   tolgo la classe active dall'indice corrente
-//     slides[activeIndex].classList.remove("active");
-
-//     if (activeIndex < images.length - 1) {
-//       // incremento l'indice
-//       activeIndex++;
-//     } else {
-//       activeIndex = 0;
-//     }
-//     console.log(activeIndex);
-
-//     // aggiungo la classe active alla nuova img con il nuovo indice
-//     slides[activeIndex].classList.add("active");
-//   });
-//___________________________________________________
+// MILESTON2
+thumbs[activeIndex].classList.add("active");
 
 //Al click sulla freccia avanti
 document.querySelector(".my-next-hook").addEventListener("click", showNext);
+// MILESTON2
 
 function showNext() {
   //   tolgo la classe active dall'indice corrente
   slides[activeIndex].classList.remove("active");
+  thumbs[activeIndex].classList.remove("active");
 
   if (activeIndex < images.length - 1) {
     // incremento l'indice
@@ -89,8 +88,8 @@ function showNext() {
 
   // aggiungo la classe active alla nuova img con il nuovo indice
   slides[activeIndex].classList.add("active");
+  thumbs[activeIndex].classList.add("active");
 }
-
 
 //Al click sulla freccia indietro
 document.querySelector(".my-prev-hook").addEventListener("click", showBack);
@@ -99,7 +98,7 @@ function showBack() {
   //   tolgo la classe active dall'indice corrente
   slides[activeIndex].classList.remove("active");
 
-  if (activeIndex > 0 ) {
+  if (activeIndex > 0) {
     // Decremento l'indice
     activeIndex--;
   } else {
@@ -109,4 +108,9 @@ function showBack() {
   // aggiungo la classe active alla nuova img con il nuovo indice
   slides[activeIndex].classList.add("active");
 }
-//___________________________________________________________--
+
+//___________________________________________________________
+
+
+
+
