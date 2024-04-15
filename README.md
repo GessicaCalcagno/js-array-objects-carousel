@@ -39,4 +39,6 @@ Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva con
 2. Milestone:
 Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è la prima e l'utente clicca la freccia verso destra, la miniatura che deve attivarsi sarà l'ultima e viceversa per l'ultima miniatura se l'utente clicca la freccia verso sinistra.
 
+#### BONUS 1:
+Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
 
