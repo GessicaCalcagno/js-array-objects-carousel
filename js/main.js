@@ -191,25 +191,3 @@ function toggleAutoplayInvert() {
   }
 }
 //_________________________________
-
-
-//  SPIEGAZIONE BONUS 1 CON CICLO FOR
-// // Aggiungi un gestore di eventi click a ciascuna miniatura
-// for (let i = 0; i < thumbs.length; i++) {
-//   thumbs[i].addEventListener("click", function () {
-//     // Rimuovi la classe "active" da tutte le miniature e le immagini grandi
-//     for (let j = 0; j < thumbs.length; j++) {
-//       thumbs[j].classList.remove("active");
-//     }
-//     for (let k = 0; k < slides.length; k++) {
-//       slides[k].classList.remove("active");
-//     }
-
-//     // Aggiungi la classe "active" alla miniatura cliccata e all'immagine corrispondente nel carousel
-//     this.classList.add("active");
-//     slides[i].classList.add("active");
-
-//     // Imposta l'indice attivo sul nuovo indice
-//     activeIndex = i;
-//   });
-// }
